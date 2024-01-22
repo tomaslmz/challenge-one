@@ -155,3 +155,29 @@ main {
 .dark-blue:hover {
   background-color: #072B61;
 }
+
+@media screen and (max-width: 1339px) {
+  body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  main {
+    width: 50%;
+  }
+
+  .messages {
+    width: 70%;
+  }
+
+  .alura-section {
+    width: 100%;
+    align-items: start;
+  }
+
+  aside {
+    text-align: center;
+  }
+}
