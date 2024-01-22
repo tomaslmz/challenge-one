@@ -116,6 +116,7 @@ main {
   gap: 8px;
   flex-shrink: 0;
   transition: background-color 150ms linear;
+  cursor: pointer;
 }
 
 .enable {
@@ -179,5 +180,15 @@ main {
 
   aside {
     text-align: center;
+  }
+
+  .advice-title {
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+  }
+  
+  .advice-text {
+    font-size: 14px;
   }
 }
