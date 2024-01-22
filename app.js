@@ -1,3 +1,18 @@
+function fixElements() {
+  document.querySelector('.messages').style.justifyContent = 'space-between';
+  const disableElements = document.querySelectorAll('.disable');
+
+  for(const element of disableElements) {
+    element.classList.add('disabled');
+  }
+
+  const enableElements = document.querySelectorAll('.enable');
+
+  for(const element of enableElements) {
+    element.classList.remove('enable');
+  }
+}
+
 function encrypt(value) {
   const separatedChar = value.split('');
 
@@ -25,7 +40,13 @@ function encrypt(value) {
     }
   }
 
-  console.log(encryptedText.join(''));
+  fixElements();
+
+  document.querySelector('.result-text').innerHTML = encryptedText.join('')
+
+  if(!value) {
+    document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
+  }
 }
 
 function decrypt(value) {
@@ -36,5 +57,19 @@ function decrypt(value) {
     .replaceAll('ober', 'o')
     .replaceAll('ufat', 'u');
 
-  console.log(decryptedText)
+  fixElements();
+
+  document.querySelector('.result-text').innerHTML = decryptedText;
+
+  if(!value) {
+    document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
+  }
+}
+
+function copy(value) {
+  navigator.clipboard.writeText(value);
+  document.querySelector('.copy').innerHTML = 'Copiado!';
+  setTimeout(() => {
+    document.querySelector('.copy').innerHTML = 'Copiar';
+  }, 1000);
 }

@@ -115,16 +115,43 @@ main {
   border-radius: 24px;
   gap: 8px;
   flex-shrink: 0;
+  transition: background-color 150ms linear;
+}
+
+.enable {
+  display: none;
+}
+
+.copy {
+  margin-bottom: 20px;
+}
+
+.result-text {
+  margin-top: 20px;
+  color: #495057;
+  font-size: 30px;
+}
+
+.disabled {
+  display: none;
 }
 
 .white {
   border-radius: 24px;
   border: 1px solid #0A3871;
-  background: #D8DFE8;
+  background-color: #EFF1FA;
+}
+
+.white:hover {
+  background-color: #D8DFE8;
 }
 
 .dark-blue {
   background-color: #0A3871;
   border: none;
   color: white;
+}
+
+.dark-blue:hover {
+  background-color: #072B61;
 }
