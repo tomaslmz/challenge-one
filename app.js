@@ -47,6 +47,8 @@ function encrypt(value) {
   if(!value) {
     document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
   }
+
+  document.querySelector('#input').value = ''
 }
 
 function decrypt(value) {
@@ -64,6 +66,8 @@ function decrypt(value) {
   if(!value) {
     document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
   }
+
+  document.querySelector('#input').value = ''
 }
 
 function copy(value) {
