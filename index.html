@@ -7,20 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="alura-icon">
-    d
+  <section class="alura-section">
+    <img src="./svg/logo.svg" alt="Logo da Alura" class="alura-img">
   </section>
   <main>
-    <input type="text" name="input" id="input" placeholder="Digite seu texto">
+    <textarea name="input" id="input" cols="30" rows="10" placeholder="Digite seu texto"></textarea>
     <aside>
-      <p>Apenas letras minúsculas e sem acento</p>
-      <button onclick="encrypt(document.getElementById('input').value)">Criptografar</button>
-      <button onclick="decrypt(document.getElementById('input').value)">Descriptografar</button>
+      <p class="alert-text"><img src="./svg/alert.svg" alt="Alerta" class="alert-img">Apenas letras minúsculas e sem acento</p>
+      <button onclick="encrypt(document.getElementById('input').value)" class="btn dark-blue">Criptografar</button>
+      <button onclick="decrypt(document.getElementById('input').value)" class="btn white">Descriptografar</button>
     </aside>
   </main>
   <section class="messages">
-    <h1>Nenhuma mensagem encontrada</h1>
-    <p>Digite um texto que você deseje criptografar ou descriptografar</p>
+    <img src="./svg/messages.svg" alt="Pessoa com uma lupa olhando" class="img disable">
+    <h1 class="advice-title disable">Nenhuma mensagem encontrada</h1>
+    <p class="advice-text disable">Digite um texto que você deseje criptografar ou descriptografar</p>
   </section>
   <script src="./app.js"></script>
 </body>
