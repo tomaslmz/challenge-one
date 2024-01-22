@@ -11,16 +11,17 @@
     d
   </section>
   <main>
-    <input type="text" name="encrypt" id="input" placeholder="Digite seu texto">
+    <input type="text" name="input" id="input" placeholder="Digite seu texto">
     <aside>
       <p>Apenas letras minúsculas e sem acento</p>
-      <button>Criptografar</button>
-      <button>Descriptografar</button>
+      <button onclick="encrypt(document.getElementById('input').value)">Criptografar</button>
+      <button onclick="decrypt(document.getElementById('input').value)">Descriptografar</button>
     </aside>
   </main>
   <section class="messages">
     <h1>Nenhuma mensagem encontrada</h1>
     <p>Digite um texto que você deseje criptografar ou descriptografar</p>
   </section>
+  <script src="./app.js"></script>
 </body>
 </html>
