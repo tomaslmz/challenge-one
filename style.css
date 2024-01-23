@@ -123,6 +123,10 @@ main {
   background-color: transparent;
 }
 
+.alura-img {
+  margin-top: 20px;
+}
+
 #input::placeholder {
   color: var(--primary-font-color);
 }
@@ -176,7 +180,7 @@ main {
   background-color: var(--primary-btn-background-hover);
 }
 
-@media screen and (max-width: 1339px) {
+@media screen and (min-width: 600px) and (max-width: 1339px) {
   body {
     flex-direction: column;
     justify-content: center;
@@ -226,5 +230,58 @@ main {
 
   .img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  main {
+    width: 50%;
+  }
+
+  .messages {
+    width: 70%;
+  }
+
+  .alura-section {
+    width: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  aside {
+    text-align: center;
+  }
+
+  .advice-title {
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+  }
+
+  #input {
+    font-size: 20px;
+  }
+  
+  #input::placeholder {
+    font-size: 20px;
+  }
+  
+  
+  .advice-text {
+    font-size: 14px;
+  }
+
+  .img {
+    display: none;
   }
 }
