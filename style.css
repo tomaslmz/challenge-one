@@ -28,8 +28,8 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;  
+  min-width: 100vw;
+  min-height: 100vh;  
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -202,7 +202,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
   }
 
   footer {
@@ -211,16 +211,26 @@ main {
   }
 
   main {
-    width: 50%;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
   }
 
   .messages {
-    width: 70%;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    font-size: 20px;
   }
 
   .alura-section {
     width: 100%;
-  
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -239,6 +249,7 @@ main {
 
   #input {
     font-size: 20px;
+    width: 50%;
   }
   
   #input::placeholder {
@@ -251,7 +262,7 @@ main {
   }
 
   .img {
-    width: 100%;
+    display: none;
   }
 }
 
@@ -260,21 +271,30 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
   }
 
   main {
-    width: 50%;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
   }
 
   .messages {
     width: 70%;
-    padding: 10px;
+    height: auto;
+    padding: 20px;
+    font-size: 20px;
   }
 
   .alura-section {
     width: 100%;
-  
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -298,6 +318,7 @@ main {
 
   #input {
     font-size: 20px;
+    width: 50%;
   }
   
   #input::placeholder {
