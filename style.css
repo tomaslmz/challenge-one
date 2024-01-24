@@ -104,7 +104,7 @@ main {
 .messages {
   background-color: var(--secondary-background);
   width: 440px;
-  height: 90%;
+  height: 90vh;
 
   display: flex;
   text-align: center;
