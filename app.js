@@ -13,61 +13,58 @@ function fixElements() {
   }
 }
 
+function validate(value) {
+  if(/[A-Z!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value)) {
+    throw new Error('Você deve inserir um texto sem letras maiúsculas e caracteres especiais!')
+  }
+}
+
 function encrypt(value) {
-  const separatedChar = value.split('');
+  try {
+    fixElements();
+    validate(value);
 
-  const encryptedText = [];
+    document.querySelector('.result-text').innerHTML = value
+    .replaceAll('a', 'ai')
+    .replaceAll('e', 'enter')
+    .replaceAll('i', 'imes')
+    .replaceAll('o', 'ober')
+    .replaceAll('u', 'ufat');
 
-  for(const char of separatedChar) {
-    switch(char) {
-      case 'a':
-        encryptedText.push('ai');
-        break;
-      case 'e':
-        encryptedText.push('enter') ;
-        break;
-      case 'i':
-        encryptedText.push('imes');
-        break;
-      case 'o':
-        encryptedText.push('ober');
-        break;
-      case 'u':
-        encryptedText.push('ufat');
-        break;
-      default:
-        encryptedText.push(char);
+    if(!value) {
+      document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
     }
+
+    document.querySelector('#input').value = ''
+  } catch(err) {
+    document.querySelector('.result-text').innerHTML = err.message;
   }
-
-  fixElements();
-
-  document.querySelector('.result-text').innerHTML = encryptedText.join('')
-
-  if(!value) {
-    document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
-  }
-
-  document.querySelector('#input').value = ''
 }
 
 function decrypt(value) {
-  const decryptedText = value
-    .replaceAll('ai', 'a')
-    .replaceAll('enter', 'e')
-    .replaceAll('imes', 'i')
-    .replaceAll('ober', 'o')
-    .replaceAll('ufat', 'u');
+  try {
+    fixElements();
+    validate(value);
 
-  fixElements();
+    const decryptedText = value
+      .replaceAll('ai', 'a')
+      .replaceAll('enter', 'e')
+      .replaceAll('imes', 'i')
+      .replaceAll('ober', 'o')
+      .replaceAll('ufat', 'u');
 
-  document.querySelector('.result-text').innerHTML = decryptedText;
 
-  if(!value) {
-    document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
+    document.querySelector('.result-text').innerHTML = decryptedText;
+
+    if(!value) {
+      document.querySelector('.result-text').innerHTML = 'Nenhuma mensagem';
+    }
+
+    document.querySelector('#input').value = ''
+
+  } catch(err) { 
+    document.querySelector('.result-text').innerHTML = err.message
   }
-
-  document.querySelector('#input').value = ''
 }
 
 function copy(value) {
